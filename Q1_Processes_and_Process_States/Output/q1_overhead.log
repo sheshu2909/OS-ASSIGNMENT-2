@@ -1,0 +1,11 @@
+== Q1: cost of a process vs a thread ==
+
+measurement                                   value
+fork() + _exit() + waitpid()                39890.1 us
+pthread_create() + pthread_join()             660.1 us
+pipe round trip (2 switches, 2 copies)         39.5 us
+RSS growth for 256 live thread stacks          7040 kB
+  -> resident bytes per thread stack           27.5 kB
+(each thread touched 64 kB of its stack; created 256)
+
+process/thread creation cost ratio: 60.4 x

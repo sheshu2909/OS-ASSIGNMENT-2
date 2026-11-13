@@ -1,0 +1,23 @@
+== Q1: fork() and the five process states ==
+  parent      pid=2115   ppid=1      state=R    VmSize=7104 kB VmRSS=8576 kB
+  child 1     pid=2117   ppid=2115   state=R    VmSize=6720 kB VmRSS=6912 kB
+  child 1: RUNNING  (CPU-bound loop)
+  child 1: WAITING  (sleep 6 s - state S in ps)
+  child 2     pid=2118   ppid=2115   state=R    VmSize=6784 kB VmRSS=6912 kB
+  child 2: RUNNING  (CPU-bound loop)
+  child 2: WAITING  (sleep 6 s - state S in ps)
+
+parent: forked 3 children: 2117 2118 2119
+parent: children are now sleeping - observe them with:
+  ps -fp <pids>        (Linux: ps -o pid,ppid,stat,comm -p <pids>)
+
+  child 3     pid=2119   ppid=2115   state=R    VmSize=6720 kB VmRSS=6912 kB
+  child 3: RUNNING  (CPU-bound loop)
+  child 3: WAITING  (sleep 6 s - state S in ps)
+  child 1: READY/RUNNING again, exiting with code 1 (TERMINATED)
+  child 2: READY/RUNNING again, exiting with code 2 (TERMINATED)
+  child 3: READY/RUNNING again, exiting with code 3 (TERMINATED)
+parent: reaped child 2117, exit status 1
+parent: reaped child 2118, exit status 2
+parent: reaped child 2119, exit status 3
+parent: all children terminated and reaped (no zombies)

@@ -1,0 +1,27 @@
+$ ps -fp 2117 2118 2119 
+     UID     PID    PPID  TTY        STIME COMMAND
+  SHESHU    2117    2115 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+     UID     PID    PPID  TTY        STIME COMMAND
+  SHESHU    2118    2115 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+     UID     PID    PPID  TTY        STIME COMMAND
+  SHESHU    2119    2115 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+
+$ ps -ef | grep q1_processes
+  SHESHU    2115       1 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+  SHESHU    2117    2115 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+  SHESHU    2119    2115 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+  SHESHU    2118    2115 ?        18:26:28 /c/Users/shesh/.config/freebuff-desktop/local-projects/360c0549-7338-4a84-9f3f-4d020779388d/work/bin/q1_processes 6 work/logs/q1_pids.txt 
+
+$ cat /proc/<pid>/status   (state and memory of each child)
+--- pid 2117 ---
+State:	S (sleeping)
+VmSize:	    7424 kB
+VmRSS:	    7104 kB
+--- pid 2118 ---
+State:	S (sleeping)
+VmSize:	    7488 kB
+VmRSS:	    7104 kB
+--- pid 2119 ---
+State:	S (sleeping)
+VmSize:	    7424 kB
+VmRSS:	    7104 kB
