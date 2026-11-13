@@ -1,0 +1,22 @@
+=== Q2-A: mixed workload of the video service ===
+4 film jobs of 1200 s (arrivals 0,30,60,90) and 8 thumbnail jobs of 2 s
+(arrivals 5,10,15,25,35,45,55,65). Times are in seconds.
+
+policy                      WT short TAT short   WT long  TAT long switches
+--------------------------------------------------------------------------
+FCFS                         1925.12   1927.12   1764.50   2964.50       12
+SJF (non-preemptive)         1175.12   1177.12   1767.00   2967.00       12
+SRTF                            0.00      2.00   1771.00   2971.00       20
+Round Robin (q=3)               2.88      4.88   3532.00   4732.00     1608
+MLFQ (q=2/16/64, boost 1000)      0.00      2.00   1976.00   3176.00       53
+
+=== Q2-B: starvation and ageing ===
+One 60 s job at priority 5 competes with a stream of one-second jobs
+at priority 1 arriving at every t = 1,2,3,... (endless supply).
+
+strict priority      film NEVER completes within 2000 units (starved); thumbnails served=1999
+priority + ageing    film completes at t=309   thumbnails served=249 avg thumb wait=0.0
+
+Interpretation: without ageing the long job is pushed back by every
+new short job; ageing raises its effective priority while it waits,
+so its completion time becomes bounded.

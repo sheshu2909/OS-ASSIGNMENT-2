@@ -1,0 +1,55 @@
+Job set: P1(AT0,BT8) P2(AT1,BT4) P3(AT2,BT9) P4(AT3,BT5)
+Priorities (1 = highest): P1=2 P2=1 P3=4 P4=3
+
+=== FCFS (non-preemptive) ===
+  Gantt: P1(0-8) P2(8-12) P3(12-21) P4(21-26) 
+
+  Process    AT   BT   CT   TAT   WT   RT
+  P1          0    8    8     8    0    0
+  P2          1    4   12    11    7    7
+  P3          2    9   21    19   10   10
+  P4          3    5   26    23   18   18
+  averages: TAT 15.25  WT 8.75  RT 8.75
+
+=== SJF (non-preemptive, shortest burst first) ===
+  Gantt: P1(0-8) P2(8-12) P4(12-17) P3(17-26) 
+
+  Process    AT   BT   CT   TAT   WT   RT
+  P1          0    8    8     8    0    0
+  P2          1    4   12    11    7    7
+  P3          2    9   26    24   15   15
+  P4          3    5   17    14    9    9
+  averages: TAT 14.25  WT 7.75  RT 7.75
+
+=== SRTF (preemptive shortest remaining time first) ===
+  Gantt: P1(0-1) P2(1-5) P4(5-10) P1(10-17) P3(17-26) 
+
+  Process    AT   BT   CT   TAT   WT   RT
+  P1          0    8   17    17    9    0
+  P2          1    4    5     4    0    0
+  P3          2    9   26    24   15   15
+  P4          3    5   10     7    2    2
+  averages: TAT 13.00  WT 6.50  RT 4.25
+
+=== Priority (non-preemptive, 1 = highest) ===
+  Gantt: P1(0-8) P2(8-12) P4(12-17) P3(17-26) 
+
+  Process    AT   BT   CT   TAT   WT   RT
+  P1          0    8    8     8    0    0
+  P2          1    4   12    11    7    7
+  P3          2    9   26    24   15   15
+  P4          3    5   17    14    9    9
+  averages: TAT 14.25  WT 7.75  RT 7.75
+
+=== Round Robin (quantum = 3), 10 slices ===
+  Gantt: P1(0-3) P2(3-6) P3(6-9) P4(9-12) P1(12-15) P2(15-16) P3(16-19) P4(19-21) P1(21-23) P3(23-26) 
+
+  Process    AT   BT   CT   TAT   WT   RT
+  P1          0    8   23    23   15    0
+  P2          1    4   16    15   11    2
+  P3          2    9   26    24   15    4
+  P4          3    5   21    18   13    6
+  averages: TAT 20.00  WT 13.50  RT 3.00
+
+All five policies above ran on the same job set, so the averages
+are directly comparable.

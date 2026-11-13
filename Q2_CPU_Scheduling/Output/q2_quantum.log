@@ -1,0 +1,13 @@
+Q2 quantum study - Round Robin on P1..P4 (AT 0,1,2,3 / BT 8,4,9,5)
+
+quantum    avg WT  avg TAT   avg RT    slices   max rq
+--------------------------------------------------------------
+1           12.50    19.00     0.75        26        3
+2           12.75    19.25     2.00        14        3
+3           13.50    20.00     3.00        10        3
+5           11.00    17.50     5.50         6        3
+10           8.75    15.25     8.75         4        3
+20           8.75    15.25     8.75         4        3
+
+slices = number of time slices executed = number of context switches
+max rq = maximum ready-queue length observed
