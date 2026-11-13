@@ -1,0 +1,8 @@
+# build products
+*.exe
+*.o
+bin/
+
+# local/editor files
+*~
+.DS_Store
