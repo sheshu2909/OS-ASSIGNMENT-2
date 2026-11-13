@@ -1,0 +1,71 @@
+== Q6: Banker's algorithm, step-by-step trace ==
+Max matrix:
+        R0  R1  R2
+  P0     7   5   3
+  P1     3   2   2
+  P2     9   0   2
+  P3     2   2   2
+  P4     4   3   3
+Allocation matrix:
+        R0  R1  R2
+  P0     0   1   0
+  P1     2   0   0
+  P2     3   0   2
+  P3     2   1   1
+  P4     0   0   2
+Need matrix (Max - Allocation):
+        R0  R1  R2
+  P0     7   4   3
+  P1     1   2   2
+  P2     6   0   0
+  P3     0   1   1
+  P4     4   3   1
+
+--- initial state ---
+  initial                Work = (3, 3, 2)
+  P0 cannot run: needs (7,4,3), R2 is short
+  step 1: P1 needs (1,2,2) <= Work (3,3,2) -> P1 finishes
+          new            Work = (5, 3, 2)
+  step 2: P3 needs (0,1,1) <= Work (5,3,2) -> P3 finishes
+          new            Work = (7, 4, 3)
+  step 3: P4 needs (4,3,1) <= Work (7,4,3) -> P4 finishes
+          new            Work = (7, 4, 5)
+  step 4: P0 needs (7,4,3) <= Work (7,4,5) -> P0 finishes
+          new            Work = (7, 5, 5)
+  step 5: P2 needs (6,0,0) <= Work (7,5,5) -> P2 finishes
+          new            Work = (10, 5, 7)
+  all processes finished -> SAFE state
+
+P1 asked for (1, 0, 2): granted, Available becomes (2, 3, 0)
+
+--- state after granting P1 (1,0,2) ---
+  initial                Work = (2, 3, 0)
+  P0 cannot run: needs (7,4,3), R2 is short
+  step 1: P1 needs (0,2,0) <= Work (2,3,0) -> P1 finishes
+          new            Work = (5, 3, 2)
+  step 2: P3 needs (0,1,1) <= Work (5,3,2) -> P3 finishes
+          new            Work = (7, 4, 3)
+  step 3: P4 needs (4,3,1) <= Work (7,4,3) -> P4 finishes
+          new            Work = (7, 4, 5)
+  step 4: P0 needs (7,4,3) <= Work (7,4,5) -> P0 finishes
+          new            Work = (7, 5, 5)
+  step 5: P2 needs (6,0,0) <= Work (7,5,5) -> P2 finishes
+          new            Work = (10, 5, 7)
+  all processes finished -> SAFE state
+
+P4 asks for (3, 3, 0): it is within P4's remaining need (4,3,1),
+but Available[0] = 2 < 3, so the request must wait.
+
+Tentatively granting P0 (0, 2, 0):
+  Available becomes (2, 1, 0), Allocation[P0] becomes (0, 3, 0)
+
+--- state after granting P0 (0,2,0) ---
+  initial                Work = (2, 1, 0)
+  P0 cannot run: needs (7,2,3), R2 is short
+  P1 cannot run: needs (0,2,0), R1 is short
+  P2 cannot run: needs (6,0,0), R0 is short
+  P3 cannot run: needs (0,1,1), R2 is short
+  P4 cannot run: needs (4,3,1), R2 is short
+  no unfinished process can be satisfied -> UNSAFE state
+
+DECISION: P0's (0,2,0) request is denied (unsafe) and the old state is restored
