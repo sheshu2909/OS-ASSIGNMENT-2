@@ -8,7 +8,7 @@
 | Register number | <YOUR REGISTER NUMBER> |
 | Department / section | <YOUR SECTION> |
 | Faculty | <FACULTY NAME> |
-| Repository | https://github.com/<YOUR USERNAME>/CSA0406-<REGISTER NUMBER>-Assignment2 |
+| Repository | https://github.com/sheshu2909/OS-ASSIGNMENT-2 |
 
 > Replace every `<...>` placeholder above with your own details before submitting, and make sure the
 > repository name follows the required convention `CSA0406-<RegisterNumber>-Assignment2`.
