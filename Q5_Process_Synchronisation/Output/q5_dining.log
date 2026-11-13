@@ -1,0 +1,5 @@
+== Q5: dining philosophers, 5 philosophers x 1000 meals ==
+meals completed        : 5000 (expected 5000)
+max philosophers eating: 2 (must be <= 2 with 5 forks)
+elapsed                : 35.5 ms
+RESULT: no deadlock, no starvation

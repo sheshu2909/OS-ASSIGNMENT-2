@@ -1,0 +1,6 @@
+== Q5: bounded buffer as a monitor (4 producers / 4 consumers) ==
+
+items consumed exactly once : 2000/2000
+duplicates / missing        : 0 / 0
+sum                         : 2001000 (expected 2001000)
+RESULT: PASS

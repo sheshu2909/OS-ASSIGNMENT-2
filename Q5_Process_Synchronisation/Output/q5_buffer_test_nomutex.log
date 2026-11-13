@@ -1,0 +1,16 @@
+== Q5: 4 producers / 4 consumers, mutex REMOVED ==
+buffer 5 slots, 500 items per producer, 20 repetitions
+
+run 1: produced exactly once 2000/2000, consumed exactly once 1998/2000, duplicates 1, missing 1, sum 2001494 (expected 2001000)
+run 2: produced exactly once 2000/2000, consumed exactly once 2000/2000, duplicates 0, missing 0, sum 2001000 (expected 2001000)
+run 3: produced exactly once 2000/2000, consumed exactly once 2000/2000, duplicates 0, missing 0, sum 2001000 (expected 2001000)
+run 6 FAILED: consumed once 1996/2000, duplicates 2, missing 2, sum 2000821 (expected 2001000)
+run 7 FAILED: consumed once 1850/2000, duplicates 75, missing 75, sum 1998944 (expected 2001000)
+run 8 FAILED: consumed once 1982/2000, duplicates 9, missing 9, sum 2004597 (expected 2001000)
+run 10 FAILED: consumed once 1996/2000, duplicates 2, missing 2, sum 2002457 (expected 2001000)
+run 11 FAILED: consumed once 1860/2000, duplicates 70, missing 70, sum 1899738 (expected 2001000)
+run 14 FAILED: consumed once 1778/2000, duplicates 111, missing 111, sum 2007441 (expected 2001000)
+run 18 FAILED: consumed once 1998/2000, duplicates 1, missing 1, sum 2001972 (expected 2001000)
+
+RESULT: 12/20 runs correct (FAIL)
+total duplicate consumptions 271, total lost items 271

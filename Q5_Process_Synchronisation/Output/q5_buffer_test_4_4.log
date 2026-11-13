@@ -1,0 +1,8 @@
+== Q5: 4 producers / 4 consumers, mutex in place ==
+buffer 5 slots, 500 items per producer, 100 repetitions
+
+run 1: produced exactly once 2000/2000, consumed exactly once 2000/2000, duplicates 0, missing 0, sum 2001000 (expected 2001000)
+run 2: produced exactly once 2000/2000, consumed exactly once 2000/2000, duplicates 0, missing 0, sum 2001000 (expected 2001000)
+run 3: produced exactly once 2000/2000, consumed exactly once 2000/2000, duplicates 0, missing 0, sum 2001000 (expected 2001000)
+
+RESULT: 100/100 runs correct (PASS)

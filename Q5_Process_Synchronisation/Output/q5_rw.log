@@ -1,0 +1,8 @@
+== Q5: readers-writers with semaphores ==
+8 readers x 20000 reads, 4 writers x 5000 writes
+
+elapsed                    : 4761.7 ms
+writes applied             : 20000 (expected 20000)
+maximum concurrent readers : 8
+invariant violations       : 0
+RESULT: writer exclusion held, readers ran concurrently

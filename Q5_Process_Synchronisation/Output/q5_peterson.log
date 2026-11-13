@@ -1,0 +1,7 @@
+== Q5: Peterson's solution, 2 threads x 1000000 entries ==
+variant: Peterson with plain volatile variables
+
+critical-section entries   : 2000000
+mutual-exclusion violations: 2
+elapsed                    : 648.6 ms
+RESULT: mutual exclusion BROKEN

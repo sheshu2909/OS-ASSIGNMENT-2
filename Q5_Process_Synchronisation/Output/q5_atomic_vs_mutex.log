@@ -1,0 +1,17 @@
+== Q5: cost of one protected increment, 100000 updates per thread ==
+
+method     threads   time (ms)    ns/update  cpu time (s) check
+--------------------------------------------------------------------
+mutex            1        15.5        154.9          0.00 OK
+atomic           1         1.4         14.2          0.00 OK
+spinlock         1         2.3         23.0          0.00 OK
+mutex            4      6472.0      16180.0          4.22 OK
+atomic           4         9.5         23.8          0.05 OK
+spinlock         4        41.7        104.2          0.12 OK
+mutex           16     25951.1      16219.4         16.73 OK
+atomic          16        43.3         27.1          0.22 OK
+spinlock        16       336.0        210.0          1.45 OK
+
+ns/update = wall time divided by total updates
+cpu time is summed over all threads; spinlock numbers above 1.0 s per
+second of wall time mean cores were burning cycles while waiting.

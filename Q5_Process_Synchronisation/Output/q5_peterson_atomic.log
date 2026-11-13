@@ -1,0 +1,7 @@
+== Q5: Peterson's solution, 2 threads x 1000000 entries ==
+variant: Peterson with C11 seq_cst atomics (memory barriers)
+
+critical-section entries   : 2000000
+mutual-exclusion violations: 0
+elapsed                    : 578.8 ms
+RESULT: mutual exclusion held

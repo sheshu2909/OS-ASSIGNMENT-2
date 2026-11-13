@@ -1,0 +1,7 @@
+== 100 consecutive runs of ./q5_bounded_buffer (the required program) ==
+
+distinct output lines and their counts:
+    100 items consumed: 20, sum = 210 (expected 210)
+
+total runs: 100
+runs equal to the expected result: 100

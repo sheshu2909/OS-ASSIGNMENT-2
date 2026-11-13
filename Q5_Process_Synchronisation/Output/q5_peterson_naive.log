@@ -1,0 +1,5 @@
+$ timeout 10 ./q5_peterson_naive 200000 ; echo "exit status = $?"
+== Q5: Peterson's solution, 2 threads x 200000 entries ==
+variant: NAIVE (only flag[], no turn variable)
+
+exit status = 124   (124 = both threads stayed in the wait loop)
