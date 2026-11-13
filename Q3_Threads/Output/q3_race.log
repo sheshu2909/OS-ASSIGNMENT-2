@@ -1,0 +1,9 @@
+== Q3: shared counter updated by 8 threads x 500000 increments ==
+
+no protection          threads= 8  expected=4000000   actual=2399412    lost=1600588
+pthread mutex          threads= 8  expected=4000000   actual=4000000    lost=0
+C11 atomic             threads= 8  expected=4000000   actual=4000000    lost=0
+
+The unprotected counter loses updates because counter++ is three
+machine instructions (load, add, store) and the scheduler can
+interleave two threads between the load and the store.
