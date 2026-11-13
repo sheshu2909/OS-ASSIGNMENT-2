@@ -1,0 +1,2 @@
+analyser (shared memory): 6 readings, average 35.5, max 41
+reader (shared memory): done, analyser wrote average 35.5 back

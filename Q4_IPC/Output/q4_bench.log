@@ -1,0 +1,11 @@
+== Q4: transfer time, pipe vs shared memory ==
+chunk size 64 KiB, best of 3 runs
+
+size            MB    pipe (ms)  pipe MB/s     shm (ms)   shm MB/s  shm/pipe
+----------------------------------------------------------------------------
+1              1.0         1.50      668.4         1.07      931.1      1.39
+10            10.0         6.66     1502.6        17.21      581.0      0.39
+100          100.0       108.45      922.1       159.66      626.3      0.68
+
+pipe   = write() into the kernel buffer + read() out of it (2 copies)
+shm    = one mmap region, both processes touch the same pages (0 copies)

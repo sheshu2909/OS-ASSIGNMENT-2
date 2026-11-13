@@ -1,0 +1,4 @@
+$ timeout 5 ./q4_pipe_noclose ; echo "exit status = $?"
+reader: wrote 6 readings but kept the write end open
+analyser: waiting for readings (it will never see EOF)
+exit status = 124   (124 = still blocked when the timeout fired)
