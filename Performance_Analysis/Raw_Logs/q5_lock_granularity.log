@@ -1,0 +1,11 @@
+== Q5: booking throughput vs lock granularity ==
+8 trains x 8 coaches, 16 agent threads, 100000 updates each
+
+lock scope        time (ms)      updates/s       sold check
+--------------------------------------------------------------------
+one global lock     24801.1          64513    1600000 OK
+one lock per train     3303.4         484352    1600000 OK
+one lock per coach      393.1        4070156    1600000 OK
+
+speed-up = global time / mode time
+global 24801.1 ms, per-train 3303.4 ms (7.51x), per-coach 393.1 ms (63.09x)

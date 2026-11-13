@@ -1,0 +1,34 @@
+question,experiment,configuration,metric,value,source_log
+Q5,lock granularity,one global lock,elapsed_ms,24801.1,q5_lock_granularity.log
+Q5,lock granularity,one lock per train,elapsed_ms,3303.4,q5_lock_granularity.log
+Q5,lock granularity,one lock per coach,elapsed_ms,393.1,q5_lock_granularity.log
+Q5,atomic vs mutex,mutex/1 threads,ns_per_update,154.9,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,atomic/1 threads,ns_per_update,14.2,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,spinlock/1 threads,ns_per_update,23.0,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,mutex/4 threads,ns_per_update,16180.0,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,atomic/4 threads,ns_per_update,23.8,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,spinlock/4 threads,ns_per_update,104.2,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,mutex/16 threads,ns_per_update,16219.4,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,atomic/16 threads,ns_per_update,27.1,q5_atomic_vs_mutex.log
+Q5,atomic vs mutex,spinlock/16 threads,ns_per_update,210.0,q5_atomic_vs_mutex.log
+Q4,pipe,1MB,ms,1.50,q4_bench.log
+Q4,shm,1MB,ms,1.07,q4_bench.log
+Q4,pipe,10MB,ms,6.66,q4_bench.log
+Q4,shm,10MB,ms,17.21,q4_bench.log
+Q4,pipe,100MB,ms,108.45,q4_bench.log
+Q4,shm,100MB,ms,159.66,q4_bench.log
+Q3,sequential,1 threads,ms,1051.1,q3_camera.log
+Q3,thread per camera,64 threads,ms,378.9,q3_camera.log
+Q3,thread pool,4 threads,ms,287.5,q3_camera.log
+Q3,thread pool,8 threads,ms,217.1,q3_camera.log
+Q3,thread pool,16 threads,ms,214.0,q3_camera.log
+Q2,quantum 1,P1-P4,avg_waiting,19.00,q2_quantum.log
+Q2,quantum 2,P1-P4,avg_waiting,19.25,q2_quantum.log
+Q2,quantum 3,P1-P4,avg_waiting,20.00,q2_quantum.log
+Q2,quantum 5,P1-P4,avg_waiting,17.50,q2_quantum.log
+Q2,quantum 10,P1-P4,avg_waiting,15.25,q2_quantum.log
+Q2,quantum 20,P1-P4,avg_waiting,15.25,q2_quantum.log
+Q6,safety check,"n=10,m=3",us_per_check,0.26,q6_bankers_scale.log
+Q6,safety check,"n=100,m=3",us_per_check,30.54,q6_bankers_scale.log
+Q6,safety check,"n=1000,m=3",us_per_check,2773.19,q6_bankers_scale.log
+Q6,safety check,"n=5000,m=3",us_per_check,74423.41,q6_bankers_scale.log

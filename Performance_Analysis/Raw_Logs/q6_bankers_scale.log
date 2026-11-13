@@ -1,0 +1,19 @@
+== Q6-E: Banker's safety check, measured against O(m * n^2) ==
+
+     n      m     reps  total (ms)  per check(us)   ns per need     safe
+-------------------------------------------------------------------------
+    10      3    20000        5.10           0.26          1.55        1
+   100      3     2000       61.08          30.54          2.02        1
+  1000      3      200      554.64        2773.19          1.85        1
+  5000      3       20     1488.47       74423.41          1.98        1
+
+Effect of the number of resource types (n = 1000):
+     n      m     reps  total (ms)  per check(us)   ns per need     safe
+-------------------------------------------------------------------------
+  1000      3      200      595.99        2979.95          1.98        1
+  1000      6      200     1056.03        5280.17          1.76        1
+  1000     12      200     1657.75        8288.73          1.38        1
+
+If ns-per-need stays roughly constant, the measured growth is the
+predicted O(m * n^2); each tenfold increase in n should cost about
+100 times more per check.

@@ -1,0 +1,12 @@
+== Q3: number-plate reader, 64 cameras x 40 frames (work=150000 units/frame) ==
+
+mode                    threads  time (ms)  speed-up  efficiency
+--------------------------------------------------------------
+sequential                    1     1051.1      1.00        1.00
+thread per camera            64      378.9      2.77        0.04  (checksum OK)
+thread pool                   4      287.5      3.66        0.91  (checksum OK)
+thread pool                   8      217.1      4.84        0.61  (checksum OK)
+thread pool                  16      214.0      4.91        0.31  (checksum OK)
+
+checksum of the sequential run: 0x62fd1e154eba833f
+frames processed: 2560, total frame work units: 384000000
