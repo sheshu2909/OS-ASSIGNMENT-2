@@ -8,11 +8,10 @@
 | Register number | 1965260024 |
 | Programme / year / section | CSE - Cybersecurity, 1st Year |
 | Faculty | Dr. JAYASAKTHI VELMURUGAN K |
-| Repository | https://github.com/sheshu2909/OS-ASSIGNMENT-2 |
+| Repository | https://github.com/sheshu2909/CSA0406-1965260024-Assignment2 |
 
-> The repository keeps the name `OS-ASSIGNMENT-2`; the paper's convention name would be
-> `CSA0406-1965260024-Assignment2`, and a rename in Settings keeps the old URL working by
-> redirect.
+> The repository follows the paper's naming convention, `CSA0406-<RegisterNumber>-Assignment2`.
+> The earlier URL `https://github.com/sheshu2909/OS-ASSIGNMENT-2` redirects to it.
 
 ---
 
