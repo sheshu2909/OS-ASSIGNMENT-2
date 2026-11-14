@@ -4,14 +4,15 @@
 
 | | |
 |---|---|
-| Student name | <YOUR NAME> |
-| Register number | <YOUR REGISTER NUMBER> |
-| Department / section | <YOUR SECTION> |
-| Faculty | <FACULTY NAME> |
+| Student name | Sheshuraaj D |
+| Register number | 1965260024 |
+| Programme / year / section | CSE - Cybersecurity, 1st Year |
+| Faculty | Dr. JAYASAKTHI VELMURUGAN K |
 | Repository | https://github.com/sheshu2909/OS-ASSIGNMENT-2 |
 
-> Replace every `<...>` placeholder above with your own details before submitting, and make sure the
-> repository name follows the required convention `CSA0406-<RegisterNumber>-Assignment2`.
+> The repository keeps the name `OS-ASSIGNMENT-2`; the paper's convention name would be
+> `CSA0406-1965260024-Assignment2`, and a rename in Settings keeps the old URL working by
+> redirect.
 
 ---
 
