@@ -41,8 +41,8 @@ gcc -std=c11 -Wall -Wextra -O2 -pthread -o q3_camera q3_camera.c
 ```
 
 All programs also build without `-pthread` where no threads are used (Q1 `q1_processes`, Q2, Q4
-`q4_pipe`, Q6). The exact command for each program is in the report, Appendix B, and in the
-`Screenshots/SCREENSHOT_REQUIRED.md` of each task folder.
+`q4_pipe`, Q6). The exact command for each program is in the report, Appendix B, and in each task folder's
+`Screenshots/README.md` next to the captured output.
 
 ## 3  Verified results
 
@@ -112,7 +112,35 @@ P4's request must wait; P0's request for (0,2,0) denied because the resulting st
 sequence (Work = (2,1,0) and no process can finish). One safety check measured at 0.26 / 30.54 /
 2,773 / 74,423 us for n = 10 / 100 / 1,000 / 5,000, consistent with O(m x n^2).
 
-## 4  Test cases
+## 4  Screenshots from the actual runs
+
+Each task folder has a `Screenshots/` folder with real console captures of that task's programs:
+the compile line, the command line and the printed output of the run that was photographed.
+The images were taken from the running console window with `PrintWindow`, so nothing is
+retyped, re-rendered or edited.
+
+| Task | Captures |
+|---|---|
+| Q1 | [fork, the five process states and `ps`](Q1_Processes_and_Process_States/Screenshots/q1_fork_and_ps.png), [process vs thread creation cost](Q1_Processes_and_Process_States/Screenshots/q1_overhead.png) |
+| Q2 | [Round Robin with quantum 3, 1 and 20](Q2_CPU_Scheduling/Screenshots/q2_round_robin.png), [five scheduling policies](Q2_CPU_Scheduling/Screenshots/q2_policies.png) |
+| Q3 | [thread pool speed-up](Q3_Threads/Screenshots/q3_threads.png), [lost updates without synchronisation](Q3_Threads/Screenshots/q3_race.png) |
+| Q4 | [pipe against shared memory](Q4_IPC/Screenshots/q4_pipe_and_shm.png), [transfer benchmark](Q4_IPC/Screenshots/q4_bench.png) |
+| Q5 | [bounded buffer, 100 correctness runs](Q5_Process_Synchronisation/Screenshots/q5_bounded_buffer.png), [lock granularity and atomic vs mutex](Q5_Process_Synchronisation/Screenshots/q5_locks.png) |
+| Q6 | [Banker's algorithm: safe, granted, wait, denied](Q6_Deadlocks_and_Bankers_Algorithm/Screenshots/q6_bankers.png) |
+
+![Q1: fork, the process states and ps](Q1_Processes_and_Process_States/Screenshots/q1_fork_and_ps.png)
+
+![Q2: Round Robin with three quantum values](Q2_CPU_Scheduling/Screenshots/q2_round_robin.png)
+
+![Q3: lost updates without synchronisation](Q3_Threads/Screenshots/q3_race.png)
+
+![Q4: pipe against shared memory](Q4_IPC/Screenshots/q4_pipe_and_shm.png)
+
+![Q5: lock granularity and atomic vs mutex](Q5_Process_Synchronisation/Screenshots/q5_locks.png)
+
+![Q6: Banker's algorithm](Q6_Deadlocks_and_Bankers_Algorithm/Screenshots/q6_bankers.png)
+
+## 5  Test cases
 
 | Test | Purpose | File |
 |---|---|---|
@@ -127,17 +155,19 @@ sequence (Work = (2,1,0) and no process can finish). One safety check measured a
 | `q6_bankers_trace` | step-by-step Work vector for the unsafe request | Q6 |
 | `q6_bankers_scale` | measured cost against the O(m x n^2) prediction | Q6 |
 
-## 5  Platform and honesty notes
+## 6  Platform and honesty notes
 
 - All programs were compiled with `gcc -std=c11 -Wall -Wextra -O2 -pthread` and produced **no
   warnings**.
 - The timings above were taken on Windows 11 with the MSYS2 POSIX layer. Absolute values are
   inflated by that layer; ratios and trends are what carry over. Re-run on the lab Linux machine
   before quoting absolute numbers in a viva.
-- No terminal screenshot is included: see each task's `Screenshots/SCREENSHOT_REQUIRED.md` for the
-  exact capture to make. No output has been invented.
+- The captures in `Screenshots/` were taken while the programs above ran; no output has been
+  invented or retyped. Wall-clock figures move slightly between runs, so a screenshot can show a
+  different microsecond value from the benchmark table; the ratios and the correctness checks do
+  not change. Each `Screenshots/README.md` says what its image shows.
 
-## 6  Repository layout
+## 7  Repository layout
 
 ```
 .
@@ -151,7 +181,7 @@ sequence (Work = (2,1,0) and no process can finish). One safety check measured a
 `-- README.md
 ```
 
-## 7  Commit history plan
+## 8  Commit history plan
 
 One commit per task as it was completed: Q1, Q2, Q3, Q4, Q5, Q6, then documentation and the final
 report. Commits made progressively show how the work developed; a single upload on the last day
