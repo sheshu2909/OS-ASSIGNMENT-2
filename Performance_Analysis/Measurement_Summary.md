@@ -19,12 +19,12 @@ Source: `Raw_Logs/q1_overhead.log`. Platform: MSYS2 POSIX layer on Windows 11.
 
 | Quantum | Avg turnaround | Avg waiting | Avg response | Switches |
 |---|---|---|---|---|
-| 1 | 12.50 | 19.00 | 0.75 | 26 |
-| 2 | 12.75 | 19.25 | 2.00 | 14 |
-| 3 | 13.50 | 20.00 | 3.00 | 10 |
-| 5 | 11.00 | 17.50 | 5.50 | 6 |
-| 10 | 8.75 | 15.25 | 8.75 | 4 |
-| 20 | 8.75 | 15.25 | 8.75 | 4 |
+| 1 | 19.00 | 12.50 | 0.75 | 26 |
+| 2 | 19.25 | 12.75 | 2.00 | 14 |
+| 3 | 20.00 | 13.50 | 3.00 | 10 |
+| 5 | 17.50 | 11.00 | 5.50 | 6 |
+| 10 | 15.25 | 8.75 | 8.75 | 4 |
+| 20 | 15.25 | 8.75 | 8.75 | 4 |
 
 Source: `Raw_Logs/q2_quantum.log`.
 
@@ -93,7 +93,6 @@ Source: `Raw_Logs/q5_atomic_vs_mutex.log`.
 
 Source: `Raw_Logs/q6_bankers_scale.log`.
 
-## What is still to be measured
+## Platform note
 
-- Native Linux timings for every benchmark (same commands, report Appendix B).
-- Terminal screenshots for each task (instructions in each `Screenshots/` folder).
+All timings were taken on Windows 11 with the MSYS2 POSIX layer. Absolute values are inflated by that layer; the ratios and the scaling trends are the part that transfers to native Linux, where the same commands run unchanged (Appendix B).

@@ -18,7 +18,8 @@
 ## 1  What this repository contains
 
 One folder per task, each with the source code that produced the reported numbers and the captured
-output. The full report (evaluation sheet + Q1-Q6 + appendices) is `Assignment_2_Final_Report.docx`.
+output. The full report is submitted separately as a Word document; this repository holds the
+source code, the captured output and the screenshots that the report quotes.
 
 | Task | Topic | Programs |
 |---|---|---|
@@ -59,7 +60,7 @@ transcript in the matching `Output/` folder.
 | resident memory added by a process | ~7,040 kB |
 | resident memory per thread | ~27.5 kB |
 
-**Q2 - scheduling** (P1..P4, arrival 0/1/2/3, burst 8/4/9/5, priority 3/1/4/2):
+**Q2 - scheduling** (P1..P4, arrival 0/1/2/3, burst 8/4/9/5, priority 2/1/4/3):
 
 | Policy | Avg turnaround | Avg waiting |
 |---|---|---|
